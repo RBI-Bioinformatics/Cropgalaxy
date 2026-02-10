@@ -3,7 +3,7 @@
 Generates sample IDs and plate layout for sample barcoding and collection
 </description>
   <command><![CDATA[
-	python $__tool_directory__/SimpleTracker.py -i $input -o output -e $exp_name -t $__tool_directory__/intertek.xls -d $direction -c $checks -m generate &&
+	python $__tool_directory__/SimpleTracker4.py -i $input -o output -e $exp_name -t $__tool_directory__/intertek.xls -d $direction -c $checks -m generate &&
 	cp output.plate_barcodes.txt $output_barcodes &&
 	cp output.sample_file.txt $output_sample_file &&
 	cp output.verify_db.txt $output_verify_db &&
