@@ -1,5 +1,240 @@
 <?xml version='1.0' encoding='utf-8'?>
 <toolbox monitor="true">
+  <section name="GAPIT" id="gapit_tool">
+    <tool file="GAPIT/run_gapit.xml" />
+  </section>
+
+  <section name="Samtools" id="samtools_tool">
+    <tool file="samtools/toy.sam" />
+  </section>
+
+  <section name="MEME" id="meme_tool">
+    <tool file="meme/meme.xml" />
+  </section>
+
+  <section name="NGS Simulation" id="ngs_simulation_tool">
+    <tool file="ngs_simulation/ngs_simulation.xml" />
+  </section>
+
+  <section name="BRS-utilities" id="brs_utilities_tool">
+    <tool file="BRS-utilities/convert2hapmap.xml" />
+    <tool file="BRS-utilities/filterHapmap.xml" />
+  </section>
+
+  <section name="Plotting" id="plotting_tool">
+    <tool file="plotting/bar_chart.xml" />
+    <tool file="plotting/boxplot.xml" />
+  </section>
+
+  <section name="Solid Tools" id="solid_tools_tool">
+    <tool file="solid_tools/maq_cs_wrapper.xml" />
+    <tool file="solid_tools/solid_qual_stats.xml" />
+    <tool file="solid_tools/solid_qual_boxplot.xml" />
+  </section>
+
+  <section name="SR Assembly" id="sr_assembly_tool">
+    <tool file="sr_assembly/sr_assembly.xml" />
+    <tool file="sr_assembly/velvetg.xml" />
+    <tool file="sr_assembly/velveth.xml" />
+  </section>
+
+  <section name="Extract" id="extract_tool">
+    <tool file="extract/extract.xml" />
+    <tool file="extract/extract_genomic_dna.xml" />
+    <tool file="extract/liftOver_wrapper.xml" />
+  </section>
+
+  <section name="Metag Tools" id="metag_tools_tool">
+    <tool file="metag_tools/metag_tools.xml" />
+    <tool file="metag_tools/blat_wrapper.xml" />
+    <tool file="metag_tools/shrimp_wrapper.xml" />
+    <tool file="metag_tools/shrimp_color_wrapper.xml" />
+  </section>
+
+  <section name="Next Gen Conversion" id="next_gen_conversion_tool">
+    <tool file="next_gen_conversion/fastq_conversions.xml" />
+    <tool file="next_gen_conversion/solid2fastq.xml" />
+    <tool file="next_gen_conversion/fastq_gen_conv.xml" />
+    <tool file="next_gen_conversion/solid_to_fastq.xml" />
+  </section>
+
+  <section name="Expression Tools" id="expression_tools_tool">
+    <tool file="expression_tools/expression_tools.xml" />
+    <tool file="expression_tools/expression_macros.xml" />
+    <tool file="expression_tools/pick_value.xml" />
+    <tool file="expression_tools/parse_values_from_file.xml" />
+  </section>
+
+  <section name="SR Mapping" id="sr_mapping_tool">
+    <tool file="sr_mapping/sr_mapping.xml" />
+    <tool file="sr_mapping/PerM.xml" />
+    <tool file="sr_mapping/mosaik.xml" />
+    <tool file="sr_mapping/bfast_wrapper.xml" />
+    <tool file="sr_mapping/srma_wrapper.xml" />
+    <tool file="sr_mapping/fastq_statistics.xml" />
+  </section>
+
+  <section name="GEMMA" id="gemma_tool">
+    <tool file="gemma/add_pheno_to_fam.xml" />
+    <tool file="gemma/compute_kinship.xml" />
+    <tool file="gemma/gemma-assoc-gk2.xml" />
+    <tool file="gemma/gemma-assoc-lm.xml" />
+    <tool file="gemma/gemma-assoc-lmm.xml" />
+    <tool file="gemma/gwas-plots.xml" />
+    <tool file="gemma/makePCA.xml" />
+    <tool file="gemma/makePCA2.xml" />
+    <tool file="gemma/makePCA-v2.xml" />
+  </section>
+
+  <section name="Plink" id="plink_tool">
+    <tool file="plink/plink-binary2vcf.xml" />
+    <tool file="plink/plink-compute-freq.xml" />
+    <tool file="plink/plink-clump.xml" />
+    <tool file="plink/plink-filter-pbed.xml" />
+    <tool file="plink/plink-clump2.xml" />
+    <tool file="plink/plink-filter.xml" />
+    <tool file="plink/plink-composite2bed.xml" />
+    <tool file="plink/plink-prune-pbed.xml" />
+    <tool file="plink/plink-compute-dist.xml" />
+    <tool file="plink/plink-prune.xml" />
+    <tool file="plink/plink-compute-distance.xml" />
+  </section>
+
+  <section name="Phenotype Association" id="phenotype_association_tool">
+    <tool file="phenotype_association/phenotype_association.xml" />
+    <tool file="phenotype_association/beam.xml" />
+    <tool file="phenotype_association/lps.xml" />
+    <tool file="phenotype_association/gpass.xml" />
+    <tool file="phenotype_association/master2gd_snp.xml" />
+    <tool file="phenotype_association/ldtools.xml" />
+    <tool file="phenotype_association/master2pg.xml" />
+    <tool file="phenotype_association/linkToDavid.xml" />
+    <tool file="phenotype_association/pass.xml" />
+    <tool file="phenotype_association/linkToGProfile.xml" />
+    <tool file="phenotype_association/sift.xml" />
+  </section>
+
+  <section name="Interactive" id="interactive_tool">
+    <tool file="interactive/interactivetool_askomics.xml" />
+    <tool file="interactive/interactivetool_bam_iobio.xml" />
+    <tool file="interactive/interactivetool_blobtoolkit.xml" />
+    <tool file="interactive/interactivetool_cellxgene_0.16.2.xml" />
+    <tool file="interactive/interactivetool_cellxgene_1.1.1.xml" />
+    <tool file="interactive/interactivetool_climate_notebook.xml" />
+    <tool file="interactive/interactivetool_ethercalc.xml" />
+    <tool file="interactive/interactivetool_geoexplorer.xml" />
+    <tool file="interactive/interactivetool_guacamole_desktop.xml" />
+    <tool file="interactive/interactivetool_hicbrowser.xml" />
+    <tool file="interactive/interactivetool_higlass.xml" />
+    <tool file="interactive/interactivetool_ilastik.xml" />
+    <tool file="interactive/interactivetool_isee.xml" />
+    <tool file="interactive/interactivetool_jupyter_notebook.xml" />
+    <tool file="interactive/interactivetool_jupyter_notebook_1.0.0.xml" />
+    <tool file="interactive/interactivetool_jupyter_notebook_1.0.1.xml" />
+    <tool file="interactive/interactivetool_metashark.xml" />
+    <tool file="interactive/interactivetool_mgnify_notebook.xml" />
+    <tool file="interactive/interactivetool_ml_jupyter_notebook.xml" />
+    <tool file="interactive/interactivetool_neo4j.xml" />
+    <tool file="interactive/interactivetool_openrefine.xml" />
+    <tool file="interactive/interactivetool_pangeo_notebook.xml" />
+    <tool file="interactive/interactivetool_panoply.xml" />
+    <tool file="interactive/interactivetool_paraview.xml" />
+    <tool file="interactive/interactivetool_pavian.xml" />
+    <tool file="interactive/interactivetool_phinch.xml" />
+    <tool file="interactive/interactivetool_pyiron.xml" />
+    <tool file="interactive/interactivetool_qiskit_jupyter_notebook.xml" />
+    <tool file="interactive/interactivetool_radiant.xml" />
+    <tool file="interactive/interactivetool_rstudio.xml" />
+    <tool file="interactive/interactivetool_simtext_app.xml" />
+    <tool file="interactive/interactivetool_vcf_iobio.xml" />
+    <tool file="interactive/interactivetool_vrm_editor.xml" />
+    <tool file="interactive/interactivetool_wallace.xml" />
+    <tool file="interactive/interactivetool_wilson.xml" />
+  </section>
+
+  <section name="Data Source" id="data_source_tool">
+    <tool file="data_source/access_libraries.xml" />
+    <tool file="data_source/biomart.xml" />
+    <tool file="data_source/biomart_test.xml" />
+    <tool file="data_source/cbi_rice_mart.xml" />
+    <tool file="data_source/ebi_sra.xml" />
+    <tool file="data_source/eupathdb.xml" />
+    <tool file="data_source/fly_modencode.xml" />
+    <tool file="data_source/flymine.xml" />
+    <tool file="data_source/flymine_test.xml" />
+    <tool file="data_source/genbank.xml" />
+    <tool file="data_source/gramene_mart.xml" />
+    <tool file="data_source/hapmapmart.xml" />
+    <tool file="data_source/hbvar.xml" />
+    <tool file="data_source/import.xml" />
+    <tool file="data_source/intermine.xml" />
+    <tool file="data_source/metabolicmine.xml" />
+    <tool file="data_source/microbial_import.xml" />
+    <tool file="data_source/modmine.xml" />
+    <tool file="data_source/mousemine.xml" />
+    <tool file="data_source/ncbi_datasets.xml" />
+    <tool file="data_source/ratmine.xml" />
+    <tool file="data_source/sra.xml" />
+    <tool file="data_source/ucsc_tablebrowser.xml" />
+    <tool file="data_source/ucsc_tablebrowser_archaea.xml" />
+    <tool file="data_source/ucsc_tablebrowser_test.xml" />
+    <tool file="data_source/upload.xml" />
+    <tool file="data_source/worm_modencode.xml" />
+    <tool file="data_source/wormbase.xml" />
+    <tool file="data_source/wormbase_test.xml" />
+    <tool file="data_source/yeastmine.xml" />
+    <tool file="data_source/zebrafishmine.xml" />
+    <tool file="data_source/biomart.xml" />
+    <tool file="data_source/biomart_test.xml" />
+    <tool file="data_source/metabolicmine.xml" />
+    <tool file="data_source/access_libraries.xml" />
+  </section>
+
+  <section name="Filters" id="filters_tool">
+    <tool file="filters/filters.xml" />
+    <tool file="filters/CreateInterval.xml" />
+    <tool file="filters/axt_to_concat_fasta.xml" />
+    <tool file="filters/axt_to_fasta.xml" />
+    <tool file="filters/axt_to_lav.xml" />
+    <tool file="filters/bed2gff.xml" />
+    <tool file="filters/bed_to_bigbed.xml" />
+    <tool file="filters/catWrapper.xml" />
+    <tool file="filters/changeCase.xml" />
+    <tool file="filters/commWrapper.xml" />
+    <tool file="filters/compare.xml" />
+    <tool file="filters/condense_characters.xml" />
+    <tool file="filters/convert_characters.xml" />
+    <tool file="filters/cutWrapper.xml" />
+    <tool file="filters/fileGrep.xml" />
+    <tool file="filters/fixedValueColumn.xml" />
+    <tool file="filters/gff2bed.xml" />
+    <tool file="filters/grep.xml" />
+    <tool file="filters/grep_1.0.1.xml" />
+    <tool file="filters/gtf2bedgraph.xml" />
+    <tool file="filters/headWrapper.xml" />
+    <tool file="filters/joiner.xml" />
+    <tool file="filters/joiner2.xml" />
+    <tool file="filters/lav_to_bed.xml" />
+    <tool file="filters/mergeCols.xml" />
+    <tool file="filters/pasteWrapper.xml" />
+    <tool file="filters/randomlines.xml" />
+    <tool file="filters/remove_beginning.xml" />
+    <tool file="filters/secure_hash_message_digest.xml" />
+    <tool file="filters/sff_extractor.xml" />
+    <tool file="filters/sorter.xml" />
+    <tool file="filters/tailWrapper.xml" />
+    <tool file="filters/trimmer.xml" />
+    <tool file="filters/ucsc_gene_bed_to_exon_bed.xml" />
+    <tool file="filters/ucsc_gene_bed_to_intron_bed.xml" />
+    <tool file="filters/ucsc_gene_table_to_intervals.xml" />
+    <tool file="filters/uniq.xml" />
+    <tool file="filters/wc_gnu.xml" />
+    <tool file="filters/wig_to_bigwig.xml" />
+    <tool file="filters/wiggle_to_simple.xml" />
+  </section>
+
+  <!-- added SC2 -->
+
   <section id="getext" name="Get Data">
     <tool file="data_source/upload.xml" />
     <tool file="data_source/ucsc_tablebrowser.xml" />
