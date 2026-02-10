@@ -263,6 +263,11 @@
     <tool file="data_export/export_remote.xml" />
   </section>
 
+<!--HTPG-->
+<section name="simpletracker" id="htpg_tools">
+    <tool file="HTPG/simpletracker.xml" />
+  </section>
+
    <!-- UNIQPRIMER -->
 
   <section name="Uniqprimer" id="uniqprimer_tool">
