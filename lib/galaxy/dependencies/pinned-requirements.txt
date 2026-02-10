@@ -213,6 +213,9 @@ webencodings==0.5.1
 webob==1.8.9
 whoosh==2.7.4
 wrapt==1.16.0
+xlrd
+xlutils
+xlwt
 yacman==0.9.3
 yarl==1.15.2
 zipp==3.20.2
