@@ -76,8 +76,8 @@
 
 <!--brs utilities-->
 
-  <label id="brs" text="BRS UTILITIES" />
-  <section name="BRS utilities" id="brs_utilities_tool">
+  <label id="brs" text="BRS TOOLS" />
+  <section name="GSL utilities" id="gsl_utilities_tool">
     <tool file="BRS-utilities/convert2hapmap.xml" />
     <tool file="BRS-utilities/filterHapmap.xml" />
     <tool file="HTPG/simpletracker.xml" />
