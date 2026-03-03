@@ -1,5 +1,34 @@
 <?xml version='1.0' encoding='utf-8'?>
 <toolbox monitor="true">
+
+  <section name="BRS-utilities" id="brs_utilities_tool">
+    <tool file="BRS-utilities/convert2hapmap.xml" />
+    <tool file="BRS-utilities/filterHapmap.xml" />
+    <tool file="HTPG/simpletracker.xml" />
+  </section> 
+
+  <section id="snp_data_tools" name="RiceGalaxy: SNP Data Tools">
+    <tool file="snpdatatools/fgsea_rice.xml" />
+    <tool file="snpdatatools/findGeneGrep4.xml" />
+    <tool file="snpdatatools/findseq2.xml" />
+    <tool file="snpdatatools/getContigName2.xml" />
+    <!--<tool file="snpdatatools/getGenes3.xml" /> -->
+    <tool file="snpdatatools/getGenes5.xml" />
+    <tool file="snpdatatools/getSubsequence2.xml" />
+    <tool file="snpdatatools/liftregionover.xml" />
+    <tool file="snpdatatools/parseBlat2.xml" />
+  </section>
+
+  <section id="GEMMA" name="RiceGalaxy: GEMMA">
+  	<tool file="gemma/plink-make-bed.xml"/>
+	  <tool file="gemma/makePCA2.xml"/> 
+	  <tool file="gemma/compute_kinship.xml"/>
+	  <tool file="gemma/add_pheno_to_fam.xml"/>
+	  <tool file="gemma/gemma-assoc-lm.xml"/> 
+	  <tool file="gemma/gemma-assoc-lmm.xml"/> 
+	  <tool file="gemma/gwas-plots.xml"/>   
+  </section>
+ 
   <section name="GAPIT" id="gapit_tool">
     <tool file="GAPIT/run_gapit.xml" />
   </section>
@@ -14,11 +43,6 @@
 
   <section name="NGS Simulation" id="ngs_simulation_tool">
     <tool file="ngs_simulation/ngs_simulation.xml" />
-  </section>
-
-  <section name="BRS-utilities" id="brs_utilities_tool">
-    <tool file="BRS-utilities/convert2hapmap.xml" />
-    <tool file="BRS-utilities/filterHapmap.xml" />
   </section>
 
   <section name="Plotting" id="plotting_tool">
@@ -263,37 +287,13 @@
     <tool file="data_export/export_remote.xml" />
   </section>
 
-<!--HTPG-->
-<section name="simpletracker" id="htpg_tools">
-    <tool file="HTPG/simpletracker.xml" />
-  </section>
-
    <!-- UNIQPRIMER -->
 
   <section name="Uniqprimer" id="uniqprimer_tool">
     <tool file="Uniqprimer/uniqprimer.xml" />
   </section>
 
-  <section id="snp_data_tools" name="RiceGalaxy: SNP Data Tools">
-    <tool file="snpdatatools/fgsea_rice.xml" />
-    <tool file="snpdatatools/findGeneGrep4.xml" />
-    <tool file="snpdatatools/findseq2.xml" />
-    <tool file="snpdatatools/getContigName2.xml" />
-    <!--<tool file="snpdatatools/getGenes3.xml" /> -->
-    <tool file="snpdatatools/getGenes5.xml" />
-    <tool file="snpdatatools/getSubsequence2.xml" />
-    <tool file="snpdatatools/liftregionover.xml" />
-    <tool file="snpdatatools/parseBlat2.xml" />
-  </section>
-  <section id="GEMMA" name="RiceGalaxy: GEMMA">
-  	<tool file="gemma/plink-make-bed.xml"/>
-	<tool file="gemma/makePCA2.xml"/> 
-	<tool file="gemma/compute_kinship.xml"/>
-	<tool file="gemma/add_pheno_to_fam.xml"/>
-	<tool file="gemma/gemma-assoc-lm.xml"/> 
-	<tool file="gemma/gemma-assoc-lmm.xml"/> 
-	<tool file="gemma/gwas-plots.xml"/>   
-  </section>
+
   <section id="collection_operations" name="Collection Operations">
     <tool file="${model_tools_path}/unzip_collection.xml" />
     <tool file="${model_tools_path}/zip_collection.xml" />
