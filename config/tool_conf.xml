@@ -1,11 +1,91 @@
 <?xml version='1.0' encoding='utf-8'?>
 <toolbox monitor="true">
 
-  <section name="BRS-utilities" id="brs_utilities_tool">
+  <label id="file_and_meta_tools" text="FILE AND META TOOLS" version="" />
+  <!-- added SC2 -->
+
+  <section id="getext" name="Get Data">
+    <tool file="data_source/upload.xml" />
+    <tool file="data_source/ucsc_tablebrowser.xml" />
+    <!-- <tool file="data_source/ucsc_tablebrowser_test.xml" /> -->
+    <tool file="data_source/ucsc_tablebrowser_archaea.xml" />
+    <tool file="data_source/ncbi_datasets.xml" />
+    <tool file="data_source/sra.xml" />
+    <tool file="data_source/ebi_sra.xml" />
+    <tool file="data_source/fly_modencode.xml" />
+    <tool file="data_source/intermine.xml" />
+    <tool file="data_source/flymine.xml" />
+    <!-- <tool file="data_source/flymine_test.xml" /> -->
+    <tool file="data_source/modmine.xml" />
+    <tool file="data_source/mousemine.xml" />
+    <tool file="data_source/ratmine.xml" />
+    <tool file="data_source/yeastmine.xml" />
+    <tool file="data_source/worm_modencode.xml" />
+    <tool file="data_source/wormbase.xml" />
+    <!-- <tool file="data_source/wormbase_test.xml" /> -->
+    <tool file="data_source/zebrafishmine.xml" />
+    <tool file="data_source/eupathdb.xml" />
+    <tool file="data_source/hbvar.xml" />
+  </section>
+  <section id="send" name="Send Data">
+    <tool file="data_export/send.xml" />
+    <tool file="data_export/export_remote.xml" />
+  </section>
+
+<!--GENERAL TEXT TOOLS-->
+
+  <label id="general_text_tools" text="GENERAL TEXT TOOLS" />
+  <section id="textutil" name="Text Manipulation">
+    <tool file="filters/fixedValueColumn.xml" />
+    <tool file="filters/catWrapper.xml" />
+    <tool file="filters/cutWrapper.xml" />
+    <tool file="filters/mergeCols.xml" />
+    <tool file="filters/convert_characters.xml" />
+    <tool file="filters/CreateInterval.xml" />
+    <tool file="filters/cutWrapper.xml" />
+    <tool file="filters/changeCase.xml" />
+    <tool file="filters/pasteWrapper.xml" />
+    <tool file="filters/remove_beginning.xml" />
+    <tool file="filters/randomlines.xml" />
+    <tool file="filters/headWrapper.xml" />
+    <tool file="filters/tailWrapper.xml" />
+    <tool file="filters/trimmer.xml" />
+    <tool file="filters/wc_gnu.xml" />
+    <tool file="filters/secure_hash_message_digest.xml" />
+  </section>
+
+  <section id="filter" name="Filter and Sort">
+    <tool file="stats/filtering_1_1_0.xml" />
+    <tool file="stats/filtering.xml" />
+    <tool file="filters/sorter.xml" />
+    <tool file="filters/grep.xml" />
+    <tool file="filters/grep_1.0.1.xml"/>
+    <label id="gff" text="GFF" />
+    <tool file="filters/gff/extract_GFF_Features.xml" />
+    <tool file="filters/gff/gff_filter_by_attribute.xml" />
+    <tool file="filters/gff/gff_filter_by_feature_count.xml" />
+    <tool file="filters/gff/gtf_filter_by_attribute_values_list.xml" />
+  </section>
+  
+  <section id="group" name="Join, Subtract and Group">
+    <tool file="filters/joiner.xml" />
+    <tool file="filters/compare.xml" />
+    <tool file="stats/grouping.xml" />
+  </section>
+
+
+<!--brs utilities-->
+
+  <label id="brs" text="BRS UTILITIES" />
+  <section name="BRS utilities" id="brs_utilities_tool">
     <tool file="BRS-utilities/convert2hapmap.xml" />
     <tool file="BRS-utilities/filterHapmap.xml" />
     <tool file="HTPG/simpletracker.xml" />
   </section> 
+
+ <!--SNP DATA TOOLS-->
+
+  <label id="rice_galaxy" text="RICE GALAXY TOOLS" /> 
 
   <section id="snp_data_tools" name="RiceGalaxy: SNP Data Tools">
     <tool file="snpdatatools/fgsea_rice.xml" />
@@ -29,6 +109,11 @@
 	  <tool file="gemma/gwas-plots.xml"/>   
   </section>
  
+
+ <!--OTHERS-->
+
+  <label id="other_tools" text="OTHER TOOLS" /> 
+
   <section name="GAPIT" id="gapit_tool">
     <tool file="GAPIT/run_gapit.xml" />
   </section>
@@ -257,36 +342,6 @@
     <tool file="filters/wiggle_to_simple.xml" />
   </section>
 
-  <!-- added SC2 -->
-
-  <section id="getext" name="Get Data">
-    <tool file="data_source/upload.xml" />
-    <tool file="data_source/ucsc_tablebrowser.xml" />
-    <!-- <tool file="data_source/ucsc_tablebrowser_test.xml" /> -->
-    <tool file="data_source/ucsc_tablebrowser_archaea.xml" />
-    <tool file="data_source/ncbi_datasets.xml" />
-    <tool file="data_source/sra.xml" />
-    <tool file="data_source/ebi_sra.xml" />
-    <tool file="data_source/fly_modencode.xml" />
-    <tool file="data_source/intermine.xml" />
-    <tool file="data_source/flymine.xml" />
-    <!-- <tool file="data_source/flymine_test.xml" /> -->
-    <tool file="data_source/modmine.xml" />
-    <tool file="data_source/mousemine.xml" />
-    <tool file="data_source/ratmine.xml" />
-    <tool file="data_source/yeastmine.xml" />
-    <tool file="data_source/worm_modencode.xml" />
-    <tool file="data_source/wormbase.xml" />
-    <!-- <tool file="data_source/wormbase_test.xml" /> -->
-    <tool file="data_source/zebrafishmine.xml" />
-    <tool file="data_source/eupathdb.xml" />
-    <tool file="data_source/hbvar.xml" />
-  </section>
-  <section id="send" name="Send Data">
-    <tool file="data_export/send.xml" />
-    <tool file="data_export/export_remote.xml" />
-  </section>
-
    <!-- UNIQPRIMER -->
 
   <section name="Uniqprimer" id="uniqprimer_tool">
@@ -320,51 +375,7 @@
   <section id="liftOver" name="Lift-Over">
     <tool file="extract/liftOver_wrapper.xml" />
   </section>
-  <section id="textutil" name="Text Manipulation">
-    <tool file="filters/fixedValueColumn.xml" />
-    <tool file="filters/catWrapper.xml" />
-    <tool file="filters/cutWrapper.xml" />
-    <tool file="filters/mergeCols.xml" />
-    <tool file="filters/convert_characters.xml" />
-    <tool file="filters/CreateInterval.xml" />
-    <tool file="filters/cutWrapper.xml" />
-    <tool file="filters/changeCase.xml" />
-    <tool file="filters/pasteWrapper.xml" />
-    <tool file="filters/remove_beginning.xml" />
-    <tool file="filters/randomlines.xml" />
-    <tool file="filters/headWrapper.xml" />
-    <tool file="filters/tailWrapper.xml" />
-    <tool file="filters/trimmer.xml" />
-    <tool file="filters/wc_gnu.xml" />
-    <tool file="filters/secure_hash_message_digest.xml" />
-  </section>
-  <section id="convert" name="Convert Formats">
-    <tool file="filters/bed2gff.xml" />
-    <tool file="filters/gff2bed.xml" />
-    <tool file="maf/maf_to_bed.xml" />
-    <tool file="maf/maf_to_interval.xml" />
-    <tool file="maf/maf_to_fasta.xml" />
-    <tool file="filters/sff_extractor.xml" />
-    <tool file="filters/wig_to_bigwig.xml" />
-    <tool file="filters/bed_to_bigbed.xml" />
-  </section>
-  <section id="filter" name="Filter and Sort">
-    <tool file="stats/filtering_1_1_0.xml" />
-    <tool file="stats/filtering.xml" />
-    <tool file="filters/sorter.xml" />
-    <tool file="filters/grep.xml" />
-    <tool file="filters/grep_1.0.1.xml"/>
-    <label id="gff" text="GFF" />
-    <tool file="filters/gff/extract_GFF_Features.xml" />
-    <tool file="filters/gff/gff_filter_by_attribute.xml" />
-    <tool file="filters/gff/gff_filter_by_feature_count.xml" />
-    <tool file="filters/gff/gtf_filter_by_attribute_values_list.xml" />
-  </section>
-  <section id="group" name="Join, Subtract and Group">
-    <tool file="filters/joiner.xml" />
-    <tool file="filters/compare.xml" />
-    <tool file="stats/grouping.xml" />
-  </section>
+
   <section id="fetchAlignSeq" name="Fetch Alignments/Sequences">
     <tool file="maf/interval2maf_pairwise.xml" />
     <tool file="maf/maf_split_by_species.xml" />
@@ -396,6 +407,17 @@
     <tool file="phenotype_association/linkToDavid.xml" />
     <tool file="phenotype_association/ldtools.xml" />
     <tool file="phenotype_association/master2pg.xml" />
+  </section>
+
+  <section id="convert" name="Convert Formats">
+    <tool file="filters/bed2gff.xml" />
+    <tool file="filters/gff2bed.xml" />
+    <tool file="maf/maf_to_bed.xml" />
+    <tool file="maf/maf_to_interval.xml" />
+    <tool file="maf/maf_to_fasta.xml" />
+    <tool file="filters/sff_extractor.xml" />
+    <tool file="filters/wig_to_bigwig.xml" />
+    <tool file="filters/bed_to_bigbed.xml" />
   </section>
   
   <section id="interactivetools" name="Interactive tools">
