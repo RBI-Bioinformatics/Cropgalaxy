@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tool id="bcftools_view_subset_url"
+      name="BCFTools View Subset (from URL)"
+      version="1.16"
+      profile="21.09">
+
+    <description>Subset remote VCF safely (samples and/or regions)</description>
+
+    <requirements>
+        <requirement type="package">bcftools</requirement>
+        <requirement type="package">htslib</requirement>
+        <requirement type="package">curl</requirement>
+    </requirements>
+
+    <command detect_errors="exit_code"><![CDATA[
+        set -euo pipefail;
+
+        curl -L "${vcf_url}" -o downloaded_input;
+
+        if bgzip -t downloaded_input 2>/dev/null; then
+            mv downloaded_input input.vcf.gz;
+        else
+            echo "Re-compressing to BGZF...";
+            gunzip -c downloaded_input | bgzip -c > input.vcf.gz;
+        fi;
+
+        bcftools index --tbi input.vcf.gz;
+
+        bcftools view
+        #if $samples_file
+            --samples-file '${samples_file}'
+        #end if
+        #if $regions.regions_select == "type_regions"
+            --regions '${regions.region_string}'
+        #elif $regions.regions_select == "upload_file"
+            --regions-file '${regions.regions_file}'
+        #end if
+            --output-type z
+            --output '${output_vcf}'
+            input.vcf.gz > /dev/null;
+    ]]></command>
+
+    <inputs>
+        <param name="vcf_url"
+               type="text"
+               label="VCF URL (http/https/ftp)"
+               help="Direct link to a .vcf.gz file accessible from the Galaxy server." />
+
+        <param name="samples_file"
+               type="data"
+               format="tabular,txt"
+               optional="true"
+               label="Sample List (Optional)"
+               help="Optional file containing sample IDs to retain. One sample name per line." />
+
+        <conditional name="regions">
+            <param name="regions_select"
+                   type="select"
+                   label="Regions"
+                   help="Select how to specify genomic regions: type manually, upload a file, or leave empty to process all regions.">
+                <option value="no_regions">No region filtering</option>
+                <option value="type_regions">Type regions manually</option>
+                <option value="upload_file">Upload regions file</option>
+            </param>
+            <when value="no_regions">
+                <!-- No additional parameters needed -->
+            </when>
+            <when value="type_regions">
+                <param name="region_string"
+                       type="text"
+                       label="Region(s)"
+                       help="Specify one or more genomic regions. Example: Chr7:1-100 or Chr1:1-100,Chr2:1-100" />
+            </when>
+            <when value="upload_file">
+                <param name="regions_file"
+                       type="data"
+                       format="tabular,bed"
+                       label="Regions File"
+                       help="Upload a regions file. Can be: tab-delimited (CHROM POS or CHROM BEG END), or BED format (.bed/.bed.gz)." />
+            </when>
+        </conditional>
+    </inputs>
+
+    <outputs>
+        <data name="output_vcf"
+              format="vcf_bgzip"
+              label="Subset VCF"/>
+    </outputs>
+
+    <help><![CDATA[
+This tool subsets a **remote VCF file** using `bcftools view`. It allows extraction of
+specific **samples**, **genomic regions**, or both from a compressed VCF file hosted at a URL.
+
+Input
+-----
+- **VCF URL**
+    A direct link to a `.vcf.gz` file accessible from the Galaxy server via HTTP, HTTPS, or FTP.
+
+- **Sample List (Optional)**
+    A text file containing the names of samples to retain in the output VCF.
+    Each sample ID should appear on a separate line.
+
+      Example sample file::
+
+        sample1
+        sample2
+        sample3
+
+- **Regions (Optional)**
+    Choose how to specify genomic regions to extract:
+
+        - **Option 1: No region filtering**
+            - Process the entire VCF file without filtering by region.
+
+        - **Option 2: Type regions manually**
+            - Manually specify one or more genomic regions using the format:
+
+              **chrom:start-end**
+
+                - **Examples:**
+
+                    - **Single region:** Chr7:1-100
+
+                    - **Multiple regions (comma-separated):** Chr1:1-100,Chr2:1-100
+
+                        - This will extract variants from **both regions** in the output VCF.
+
+        - **Option 3: Upload regions file**
+            - Upload a regions file instead of typing regions manually.
+
+            - **Example**::
+
+                    Chr1   1       20000
+                    Chr5   50      50000
+                    Chr7   100     100000
+
+Output
+------
+    - **Subset VCF**
+        - A **BGZF-compressed VCF file (.vcf.gz)** containing only the requested subset of variants and samples.
+
+
+
+]]></help>
+
+</tool>

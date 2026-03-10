@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tool id="bcftools_index_stats_url"
+      name="BCFtools Index Statistics (from URL)"
+      version="1.0.1"
+      profile="21.09">
+
+    <description>Create CSI index and report index statistics from remote VCF/BCF</description>
+
+    <requirements>
+        <requirement type="package">bcftools</requirement>
+        <requirement type="package">curl</requirement>
+        <requirement type="package">file</requirement>
+    </requirements>
+
+    <command><![CDATA[
+        set -euo pipefail;
+
+        curl -L "${vcf_url}" -o input_file;
+
+        if file input_file | grep -q BCF; then
+            mv input_file input.bcf;
+            bcftools index -c input.bcf;
+            bcftools index --stats input.bcf > index_stats.txt;
+        else
+            mv input_file input.vcf.gz;
+            bcftools index -c input.vcf.gz;
+            bcftools index --stats input.vcf.gz > index_stats.txt;
+        fi
+    ]]></command>
+
+    <inputs>
+        <param name="vcf_url"
+               type="text"
+               label="VCF/BCF URL (http/https/ftp)"
+               help="Provide a direct link to a .vcf.gz or .bcf file accessible from the Galaxy server."/>
+    </inputs>
+
+    <outputs>
+        <data name="index_stats"
+              format="txt"
+              from_work_dir="index_stats.txt"
+              label="Index Statistics"/>
+    </outputs>
+
+    <help><![CDATA[
+This tool downloads a **remote VCF or BCF file**, creates a **CSI index**, and reports **index statistics** using `bcftools`.
+
+Input
+-----
+- **VCF/BCF URL** – A direct link to a **.vcf.gz** or **.bcf** file accessible from the Galaxy server (HTTP, HTTPS, or FTP).
+
+Output
+------
+The output is a **tab-delimited text file with three columns** describing statistics for each contig in the indexed file:
+
+1. **Contig name**  
+   The chromosome or sequence identifier (for example `chr1`, `chr2`, etc.).
+
+2. **Contig length**  
+   The length of the contig in the reference genome. If the length is not known, a **'.'** may be reported.
+
+3. **Number of records**  
+   The number of variant records indexed for that contig.
+
+**Example output**::
+
+    chr1    248956422    15432
+    chr2    242193529    13210
+    chr3    198295559    11045  
+
+`Each row corresponds to one contig present in the indexed VCF/BCF file.`
+
+
+Notes
+-----
+- The **entire file is downloaded before indexing**.
+- Input files must already be **compressed (`.vcf.gz`) or in BCF format**.
+- The provided URL must be **directly accessible from the Galaxy server**.
+]]></help>
+
+</tool>

@@ -1,0 +1,42 @@
+<tool id="bcftools_query_samples_from_url" name="List Samples from VCF/BCF URL" version="1.0.0">
+    <description>Extract sample names from a remote VCF/BCF file using bcftools</description>
+
+    <requirements>
+        <requirement type="package">bcftools</requirement>
+    </requirements>
+
+    <command><![CDATA[
+        bcftools query -l "${vcf_url}" > samples.txt
+    ]]></command>
+
+    <inputs>
+        <param name="vcf_url"
+               type="text"
+               label="VCF/BCF URL (http/https/ftp)"
+               help="Provide a direct link to a .vcf.gz or .bcf file accessible from the Galaxy server."/>
+    </inputs>
+
+    <outputs>
+        <data name="samples"
+              format="txt"
+              from_work_dir="samples.txt"
+              label="Sample List"/>
+    </outputs>
+
+    <help><![CDATA[
+This tool extracts **sample names** from a remote **VCF or BCF file** using `bcftools`.
+
+Input
+-----
+- A direct **URL** to a `.vcf.gz` or `.bcf` file accessible by the Galaxy server.
+
+Output
+------
+- A text file containing the list of sample IDs present in the file.
+
+Example
+-------
+`bcftools query -l https://example.com/data/sample.vcf.gz`
+    ]]></help>
+
+</tool>

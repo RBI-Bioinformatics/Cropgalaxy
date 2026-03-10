@@ -109,14 +109,50 @@
 	  <tool file="gemma/gwas-plots.xml"/>   
   </section>
  
+ <!--genetic analysis-->
+
+  <label id="genetic_analysis" text="GENETIC ANALYSIS" />
+  <section name="BCFTools" id="bcftools">
+    <tool file="bcftools/bcftools_index_stats.xml" />
+    <tool file="bcftools/bcftools_query-samples.xml" />
+    <tool file="bcftools/bcftools_view_subset.xml" />  
+  </section> 
+
+  <section name="GAPIT" id="gapit_tool">
+    <tool file="GAPIT/run_gapit.xml" />
+  </section>
+
+  <section name="GEMMA" id="gemma_tool">
+    <tool file="gemma/add_pheno_to_fam.xml" />
+    <tool file="gemma/compute_kinship.xml" />
+    <tool file="gemma/gemma-assoc-gk2.xml" />
+    <tool file="gemma/gemma-assoc-lm.xml" />
+    <tool file="gemma/gemma-assoc-lmm.xml" />
+    <tool file="gemma/gwas-plots.xml" />
+    <tool file="gemma/makePCA.xml" />
+    <tool file="gemma/makePCA2.xml" />
+    <tool file="gemma/makePCA-v2.xml" />
+  </section>
+
+  <section name="Plink" id="plink_tool">
+    <tool file="plink/plink-binary2vcf.xml" />
+    <tool file="plink/plink-compute-freq.xml" />
+    <tool file="plink/plink-clump.xml" />
+    <tool file="plink/plink-filter-pbed.xml" />
+    <tool file="plink/plink-clump2.xml" />
+    <tool file="plink/plink-filter.xml" />
+    <tool file="plink/plink-composite2bed.xml" />
+    <tool file="plink/plink-prune-pbed.xml" />
+    <tool file="plink/plink-compute-dist.xml" />
+    <tool file="plink/plink-prune.xml" />
+    <tool file="plink/plink-compute-distance.xml" />
+  </section>
 
  <!--OTHERS-->
 
   <label id="other_tools" text="OTHER TOOLS" /> 
 
-  <section name="GAPIT" id="gapit_tool">
-    <tool file="GAPIT/run_gapit.xml" />
-  </section>
+
 
   <section name="Samtools" id="samtools_tool">
     <tool file="samtools/toy.sam" />
@@ -183,31 +219,6 @@
     <tool file="sr_mapping/fastq_statistics.xml" />
   </section>
 
-  <section name="GEMMA" id="gemma_tool">
-    <tool file="gemma/add_pheno_to_fam.xml" />
-    <tool file="gemma/compute_kinship.xml" />
-    <tool file="gemma/gemma-assoc-gk2.xml" />
-    <tool file="gemma/gemma-assoc-lm.xml" />
-    <tool file="gemma/gemma-assoc-lmm.xml" />
-    <tool file="gemma/gwas-plots.xml" />
-    <tool file="gemma/makePCA.xml" />
-    <tool file="gemma/makePCA2.xml" />
-    <tool file="gemma/makePCA-v2.xml" />
-  </section>
-
-  <section name="Plink" id="plink_tool">
-    <tool file="plink/plink-binary2vcf.xml" />
-    <tool file="plink/plink-compute-freq.xml" />
-    <tool file="plink/plink-clump.xml" />
-    <tool file="plink/plink-filter-pbed.xml" />
-    <tool file="plink/plink-clump2.xml" />
-    <tool file="plink/plink-filter.xml" />
-    <tool file="plink/plink-composite2bed.xml" />
-    <tool file="plink/plink-prune-pbed.xml" />
-    <tool file="plink/plink-compute-dist.xml" />
-    <tool file="plink/plink-prune.xml" />
-    <tool file="plink/plink-compute-distance.xml" />
-  </section>
 
   <section name="Phenotype Association" id="phenotype_association_tool">
     <tool file="phenotype_association/phenotype_association.xml" />
