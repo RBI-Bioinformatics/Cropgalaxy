@@ -152,8 +152,6 @@
 
   <label id="other_tools" text="OTHER TOOLS" /> 
 
-
-
   <section name="Samtools" id="samtools_tool">
     <tool file="samtools/toy.sam" />
   </section>
@@ -218,7 +216,6 @@
     <tool file="sr_mapping/srma_wrapper.xml" />
     <tool file="sr_mapping/fastq_statistics.xml" />
   </section>
-
 
   <section name="Phenotype Association" id="phenotype_association_tool">
     <tool file="phenotype_association/phenotype_association.xml" />
