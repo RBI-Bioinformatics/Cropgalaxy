@@ -81,6 +81,7 @@
     <tool file="BRS-utilities/convert2hapmap.xml" />
     <tool file="BRS-utilities/filterHapmap.xml" />
     <tool file="HTPG/simpletracker.xml" />
+    <tool file="HTPG/Intertek-fj_converter.xml" />
   </section> 
 
  <!--SNP DATA TOOLS-->
