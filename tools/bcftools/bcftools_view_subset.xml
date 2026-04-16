@@ -96,6 +96,8 @@ Input
 - **VCF URL**
     A direct link to a `.vcf.gz` file accessible from the Galaxy server via HTTP, HTTPS, or FTP.
 
+    Sample data: https://3kricegenome.s3.dualstack.us-east-1.amazonaws.com/Nipponbare/snp-only-vcf/01_Nipponbare_IRIS_313-9996.snp.vcf.filtered.gz
+
 - **Sample List (Optional)**
     A text file containing the names of samples to retain in the output VCF.
     Each sample ID should appear on a separate line.
