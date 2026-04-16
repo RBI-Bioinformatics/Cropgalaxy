@@ -84,6 +84,12 @@
     <tool file="HTPG/Intertek-fj_converter.xml" />
   </section> 
 
+  <section name="Fairground" id="FGTools">
+    <tool file="bcftools/bcftools_index_stats.xml" />
+    <tool file="bcftools/bcftools_view_subset.xml" />  
+  </section> 
+
+
  <!--SNP DATA TOOLS-->
 
   <label id="rice_galaxy" text="RICE GALAXY TOOLS" /> 
@@ -113,11 +119,6 @@
  <!--genetic analysis-->
 
   <label id="genetic_analysis" text="GENETIC ANALYSIS" />
-  <section name="BCFTools" id="bcftools">
-    <tool file="bcftools/bcftools_index_stats.xml" />
-    <tool file="bcftools/bcftools_query-samples.xml" />
-    <tool file="bcftools/bcftools_view_subset.xml" />  
-  </section> 
 
   <section name="GAPIT" id="gapit_tool">
     <tool file="GAPIT/run_gapit.xml" />
