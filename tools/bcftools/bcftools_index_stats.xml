@@ -48,7 +48,7 @@ This tool downloads a **remote VCF or BCF file**, creates a **CSI index**, and r
 Input
 -----
 - **VCF/BCF URL** – A direct link to a **.vcf.gz** or **.bcf** file accessible from the Galaxy server (HTTP, HTTPS, or FTP).
-Sample data: https://3kricegenome.s3.dualstack.us-east-1.amazonaws.com/Nipponbare/snp-only-vcf/01_Nipponbare_IRIS_313-9996.snp.vcf.filtered.gz
+- Sample data: https://3kricegenome.s3.dualstack.us-east-1.amazonaws.com/Nipponbare/snp-only-vcf/01_Nipponbare_IRIS_313-9996.snp.vcf.filtered.gz
 
 Output
 ------
