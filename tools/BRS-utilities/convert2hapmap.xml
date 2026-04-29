@@ -17,8 +17,8 @@
 	</param>
 	<param name="snptable_file" type="select" label="Select SNP set used" help="">
 		<!-- <options from_data_table="all_genotype_sets"/> -->
-        	<option value="/home/vjuanillas/Cropgalaxy/database/db_tables/AgriPlexSNPs_v4.0.csv">1K RiCA SNPs (v4.0)</option>
-                <option value="/home/vjuanillas/Cropgalaxy/database/db_tables/DArTSNPs_v4.2.csv">DArT SNPs (v4.2)</option>	
+        	<option value="/home/ubuntu/Cropgalaxy/database/db_tables/AgriPlexSNPs_v4.0.csv">1K RiCA SNPs (v4.0)</option>
+                <option value="/home/ubuntu/Cropgalaxy/database/db_tables/DArTSNPs_v4.2.csv">DArT SNPs (v4.2)</option>	
 	</param>
   </inputs>
  
